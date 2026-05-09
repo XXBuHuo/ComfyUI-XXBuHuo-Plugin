@@ -1,0 +1,204 @@
+{
+  "id": "7734c3f0-2dcd-441d-86d0-f5b312cc7d33",
+  "revision": 0,
+  "last_node_id": 204,
+  "last_link_id": 75,
+  "nodes": [
+    {
+      "id": 201,
+      "type": "LoadVideo",
+      "pos": [
+        9022.13494958095,
+        2172.7972125529436
+      ],
+      "size": [
+        270,
+        236
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "VIDEO",
+          "type": "VIDEO",
+          "links": [
+            73
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadVideo"
+      },
+      "widgets_values": [
+        "下载.mp4",
+        "image"
+      ]
+    },
+    {
+      "id": 202,
+      "type": "PreviewImage",
+      "pos": [
+        9619.77388291376,
+        2174.4950842498993
+      ],
+      "size": [
+        140,
+        246
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 74
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 204,
+      "type": "XXBuHuoTextProcessor",
+      "pos": [
+        9770.569983668052,
+        2174.898399745593
+      ],
+      "size": [
+        210,
+        152.94576353649927
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "any_1",
+          "type": "*",
+          "link": 75
+        }
+      ],
+      "outputs": [
+        {
+          "name": "数:",
+          "type": "STRING",
+          "links": null
+        },
+        {
+          "name": "总段:",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "XXBuHuoTextProcessor",
+        "initialized": true
+      },
+      "widgets_values": [
+        "提取独立分镜: 12 段\n首帧确切索引: [0, 62, 122, 167, 264, 362, 426, 460, 516, 658, 709, 798]",
+        false,
+        false,
+        true,
+        "空行",
+        0,
+        1,
+        "0",
+        0,
+        null
+      ]
+    },
+    {
+      "id": 200,
+      "type": "XXBuHuo_VideoSceneSplitter",
+      "pos": [
+        9301.060195656666,
+        2173.9972915630824
+      ],
+      "size": [
+        302.612890625,
+        174
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "video_data",
+          "type": "*",
+          "link": 73
+        }
+      ],
+      "outputs": [
+        {
+          "name": "first_frames",
+          "type": "IMAGE",
+          "links": [
+            74
+          ]
+        },
+        {
+          "name": "scene_info",
+          "type": "STRING",
+          "links": [
+            75
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "XXBuHuo_VideoSceneSplitter"
+      },
+      "widgets_values": [
+        0.27,
+        3,
+        10,
+        "开启",
+        "开启"
+      ]
+    }
+  ],
+  "links": [
+    [
+      73,
+      201,
+      0,
+      200,
+      0,
+      "VIDEO"
+    ],
+    [
+      74,
+      200,
+      0,
+      202,
+      0,
+      "IMAGE"
+    ],
+    [
+      75,
+      200,
+      1,
+      204,
+      0,
+      "STRING"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 2.111377674535307,
+      "offset": [
+        -8888.72127162994,
+        -1961.9440700641414
+      ]
+    },
+    "frontendVersion": "1.42.15"
+  },
+  "version": 0.4
+}

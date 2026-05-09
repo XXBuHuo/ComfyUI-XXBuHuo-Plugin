@@ -1,0 +1,1134 @@
+{
+  "114": {
+    "inputs": {
+      "noise_seed": 42
+    },
+    "class_type": "RandomNoise",
+    "_meta": {
+      "title": "第一次采样随机种"
+    }
+  },
+  "137": {
+    "inputs": {
+      "sampler_name": "res_2s"
+    },
+    "class_type": "KSamplerSelect",
+    "_meta": {
+      "title": "第一次采样器选择"
+    }
+  },
+  "162": {
+    "inputs": {
+      "img_compression": 18,
+      "image": [
+        "443",
+        0
+      ]
+    },
+    "class_type": "LTXVPreprocess",
+    "_meta": {
+      "title": "LTXV预处理"
+    }
+  },
+  "163": {
+    "inputs": {
+      "image": [
+        "287",
+        0
+      ]
+    },
+    "class_type": "GetImageSize",
+    "_meta": {
+      "title": "获取图像尺寸"
+    }
+  },
+  "165": {
+    "inputs": {
+      "width": [
+        "371",
+        0
+      ],
+      "height": [
+        "372",
+        0
+      ],
+      "upscale_method": "nearest-exact",
+      "keep_proportion": "crop",
+      "pad_color": "0, 0, 0",
+      "crop_position": "center",
+      "divisible_by": 32,
+      "device": "cpu",
+      "image": [
+        "167",
+        0
+      ]
+    },
+    "class_type": "ImageResizeKJv2",
+    "_meta": {
+      "title": "Resize Image v2"
+    }
+  },
+  "167": {
+    "inputs": {
+      "image": "0398a910ad3a39854d2b149a3f420158.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "加载图像"
+    }
+  },
+  "184": {
+    "inputs": {
+      "vae_name": "video\\kijai\\LTX-2.3\\LTX2.3_video_vae_bf16.safetensors"
+    },
+    "class_type": "VAELoader",
+    "_meta": {
+      "title": "Load VAE (video VAE)"
+    }
+  },
+  "189": {
+    "inputs": {
+      "model_name": "ltx-2.3-spatial-upscaler-x2-1.1.safetensors"
+    },
+    "class_type": "LatentUpscaleModelLoader",
+    "_meta": {
+      "title": "加载Latent放大模型"
+    }
+  },
+  "196": {
+    "inputs": {
+      "vae_name": "video\\kijai\\LTX-2.3\\LTX2.3_audio_vae_bf16.safetensors",
+      "device": "main_device",
+      "weight_dtype": "bf16"
+    },
+    "class_type": "VAELoaderKJ",
+    "_meta": {
+      "title": "VAELoader KJ (audio VAE)"
+    }
+  },
+  "259": {
+    "inputs": {
+      "model_name": "video\\KiJai\\MelBandRoformer_fp16.safetensors"
+    },
+    "class_type": "MelBandRoFormerModelLoader",
+    "_meta": {
+      "title": "声音分离"
+    }
+  },
+  "287": {
+    "inputs": {
+      "upscale_method": "lanczos",
+      "scale_by": 0.5,
+      "image": [
+        "165",
+        0
+      ]
+    },
+    "class_type": "ImageScaleBy",
+    "_meta": {
+      "title": "缩放图像（比例）"
+    }
+  },
+  "360": {
+    "inputs": {
+      "expression": "a*b+1",
+      "a": [
+        "363",
+        0
+      ],
+      "b": [
+        "361",
+        0
+      ]
+    },
+    "class_type": "SimpleCalculatorKJ",
+    "_meta": {
+      "title": "SimpleCalculatorKJ"
+    }
+  },
+  "361": {
+    "inputs": {
+      "value": 24
+    },
+    "class_type": "PrimitiveFloat",
+    "_meta": {
+      "title": "FPS"
+    }
+  },
+  "363": {
+    "inputs": {
+      "value": 5
+    },
+    "class_type": "PrimitiveFloat",
+    "_meta": {
+      "title": "视频总时常X（秒）"
+    }
+  },
+  "364": {
+    "inputs": {
+      "audio": "ComfyUI_temp_uqqrj_00001_.flac",
+      "audioUI": "/api/view?filename=ComfyUI_temp_uqqrj_00001_.flac&type=input&subfolder=&rand=0.19606856678840312"
+    },
+    "class_type": "LoadAudio",
+    "_meta": {
+      "title": "加载音频"
+    }
+  },
+  "366": {
+    "inputs": {
+      "model": [
+        "259",
+        0
+      ],
+      "audio": [
+        "535",
+        0
+      ]
+    },
+    "class_type": "MelBandRoFormerSampler",
+    "_meta": {
+      "title": "Mel-Band RoFormer Sampler"
+    }
+  },
+  "371": {
+    "inputs": {
+      "value": 720
+    },
+    "class_type": "INTConstant",
+    "_meta": {
+      "title": "WIDTH"
+    }
+  },
+  "372": {
+    "inputs": {
+      "value": 1280
+    },
+    "class_type": "INTConstant",
+    "_meta": {
+      "title": "HEIGHT"
+    }
+  },
+  "411": {
+    "inputs": {
+      "samples": [
+        "591:116",
+        1
+      ],
+      "audio_vae": [
+        "196",
+        0
+      ]
+    },
+    "class_type": "LTXVAudioVAEDecode",
+    "_meta": {
+      "title": "LTXV音频VAE解码"
+    }
+  },
+  "417": {
+    "inputs": {
+      "ckpt_name": "video\\LTX-2.3\\ltx-2.3-22b-distilled-1.1.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Checkpoint加载器（简易）"
+    }
+  },
+  "443": {
+    "inputs": {
+      "resize_type": "scale longer dimension",
+      "resize_type.longer_size": 1536,
+      "scale_method": "lanczos",
+      "input": [
+        "165",
+        0
+      ]
+    },
+    "class_type": "ResizeImageMaskNode",
+    "_meta": {
+      "title": "调整图像/掩码大小"
+    }
+  },
+  "451": {
+    "inputs": {
+      "sigmas": "0.909375, 0.725, 0.421875, 0.0"
+    },
+    "class_type": "ManualSigmas",
+    "_meta": {
+      "title": "第二次采样Sigmas"
+    }
+  },
+  "484": {
+    "inputs": {
+      "filename_prefix": "video",
+      "format": "auto",
+      "codec": "auto",
+      "video": [
+        "610:481",
+        0
+      ]
+    },
+    "class_type": "SaveVideo",
+    "_meta": {
+      "title": "保存视频"
+    }
+  },
+  "521": {
+    "inputs": {
+      "value": false
+    },
+    "class_type": "PrimitiveBoolean",
+    "_meta": {
+      "title": "true=忽略图像参考"
+    }
+  },
+  "535": {
+    "inputs": {
+      "start_index": 0,
+      "duration": 5,
+      "audio": [
+        "364",
+        0
+      ]
+    },
+    "class_type": "TrimAudioDuration",
+    "_meta": {
+      "title": "修剪音频时长"
+    }
+  },
+  "536": {
+    "inputs": {
+      "audioUI": "",
+      "audio": [
+        "535",
+        0
+      ]
+    },
+    "class_type": "PreviewAudio",
+    "_meta": {
+      "title": "预览音频"
+    }
+  },
+  "539": {
+    "inputs": {
+      "sampler_name": "res_2s"
+    },
+    "class_type": "KSamplerSelect",
+    "_meta": {
+      "title": "第二次采样器选择"
+    }
+  },
+  "556": {
+    "inputs": {
+      "audioUI": "",
+      "audio": [
+        "411",
+        0
+      ]
+    },
+    "class_type": "PreviewAudio",
+    "_meta": {
+      "title": "预览音频"
+    }
+  },
+  "567": {
+    "inputs": {
+      "noise_seed": 0
+    },
+    "class_type": "RandomNoise",
+    "_meta": {
+      "title": "第二次采样随机种"
+    }
+  },
+  "582": {
+    "inputs": {
+      "value": 8
+    },
+    "class_type": "PrimitiveInt",
+    "_meta": {
+      "title": "第一次采样步数"
+    }
+  },
+  "672": {
+    "inputs": {
+      "images": [
+        "443",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "预览图像"
+    }
+  },
+  "673": {
+    "inputs": {
+      "images": [
+        "162",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "预览图像"
+    }
+  },
+  "676": {
+    "inputs": {
+      "clean_file_cache": true,
+      "clean_processes": true,
+      "clean_dlls": true,
+      "retry_times": 3,
+      "anything": [
+        "677",
+        0
+      ]
+    },
+    "class_type": "RAMCleanup",
+    "_meta": {
+      "title": "🎈RAM-Cleanup"
+    }
+  },
+  "677": {
+    "inputs": {
+      "offload_model": true,
+      "offload_cache": true,
+      "anything": [
+        "678",
+        0
+      ]
+    },
+    "class_type": "VRAMCleanup",
+    "_meta": {
+      "title": "🎈VRAM-Cleanup"
+    }
+  },
+  "678": {
+    "inputs": {
+      "reserved": 15,
+      "mode": "manual",
+      "seed": 0,
+      "auto_max_reserved": 0,
+      "clean_gpu_before": true,
+      "anything": [
+        "703",
+        0
+      ]
+    },
+    "class_type": "ReservedVRAMSetter",
+    "_meta": {
+      "title": "Set Reserved VRAM(GB) ⚙️"
+    }
+  },
+  "679": {
+    "inputs": {
+      "file_name": "Negatives.safetensors",
+      "device": "gpu"
+    },
+    "class_type": "LTXVLoadConditioning",
+    "_meta": {
+      "title": "🅛🅣🅧 LTXV Load Conditioning"
+    }
+  },
+  "697": {
+    "inputs": {
+      "safe_zone_ratio": 0.55,
+      "debug_log": "On",
+      "model": [
+        "574:407",
+        0
+      ],
+      "clip": [
+        "676",
+        0
+      ],
+      "text": [
+        "716",
+        0
+      ],
+      "video_latent": [
+        "698",
+        0
+      ]
+    },
+    "class_type": "XXBuHuo_LTX_Subtitle_Blocker",
+    "_meta": {
+      "title": "XXBuHuoLTX字幕屏蔽"
+    }
+  },
+  "698": {
+    "inputs": {
+      "width": 1280,
+      "height": 728,
+      "batch_size": 1
+    },
+    "class_type": "EmptyLatentImage",
+    "_meta": {
+      "title": "空Latent图像"
+    }
+  },
+  "703": {
+    "inputs": {
+      "text_encoder": "LTX-2.3\\gemma_3_12B_it_fp8_scaled.safetensors",
+      "ckpt_name": "video\\LTX-2.3\\ltx-2.3-22b-distilled-1.1.safetensors",
+      "device": "default"
+    },
+    "class_type": "LTXAVTextEncoderLoader",
+    "_meta": {
+      "title": "LTXV音频文本编码器加载器"
+    }
+  },
+  "716": {
+    "inputs": {
+      "ui_tab": "模型",
+      "model_source": "Local_GGUF",
+      "gguf_model": "Qwen3.5-9B-Uncensored-HauhauCS-Aggressive-Q4_K_M.gguf",
+      "mmproj_model": "mmproj-Qwen3.5-9B-Uncensored-HauhauCS-Aggressive-BF16.gguf",
+      "vision_type": "Qwen3.5-VL",
+      "draft_model": "None",
+      "vram_limit": "Auto (-1)",
+      "n_ctx": 12800,
+      "n_batch": 2048,
+      "n_gpu_layers": -1,
+      "cpu_threads": "Auto",
+      "n_cpu_moe": "None",
+      "kv_cache_type_k": "默认(F16)",
+      "kv_cache_type_v": "默认(F16)",
+      "api_url": "",
+      "api_key": "",
+      "api_model": "",
+      "api_img_size": "2560x1440",
+      "api_img_quality": "hd",
+      "api_img_style": "natural",
+      "api_timeout": 600,
+      "api_url_presets": "https://api.deepseek.com/chat/completions|||https://api.bltcy.ai/v1/chat/completions|||https://api.openai.com/v1/chat/completions|||https://api.siliconflow.cn/v1/chat/completions|||https://api.bltcy.ai/v1/images/generations|||https://api.openai.com/v1/images/generations|||http://127.0.0.1:11434/v1/chat/completions|||https://open.bigmodel.cn/api/paas/v4/chat/completions",
+      "multi_image_upload": "",
+      "video_upload": "None",
+      "image_folder_path": "",
+      "filter_store": "",
+      "max_tokens": 2048,
+      "temperature": 0.8,
+      "top_p": 0.95,
+      "repeat_penalty": 1.1,
+      "video_max_frames": "",
+      "image_max_size": 1024,
+      "enable_resize": false,
+      "resize_width": "",
+      "resize_height": "",
+      "swap_dimensions": false,
+      "upscale_method": "nearest-exact",
+      "keep_proportion": "resize",
+      "crop_position": "center",
+      "device": "cuda",
+      "divisible_by": "",
+      "preset_prompt": "None",
+      "system_prompt": "",
+      "prompt_enhancer": "None",
+      "custom_prompt": "一位留着深色波浪长发、戴着白色框墨镜推至头顶的20岁年轻女性，身穿鲜艳的红色紧身运动背心与黑色低腰裤，佩戴银色十字架项链，站在阳光斑驳的红砖建筑前，右手轻轻托举一颗鲜红色的圆形棒棒糖靠近脸颊。她先是微微歪头，嘴角噙着甜腻的笑意，眼神灵动地向镜头抛媚眼，随即双手将棒棒糖递向镜头方向做出邀请姿态，嘴唇轻启吐出娇软撒娇的语气说道：“哥哥，人家请你吃棒棒糖，你的6000Pro给人家用用好不好。”接着她顺势抬手撩拨了一下耳边的碎发，身体随着微风轻轻摇摆，阳光在她的肌肤与红砖背景上跳跃闪烁，裙摆与袖口随动作泛起细微的褶皱波动。镜头以中近景固定机位缓慢环绕拍摄，捕捉她从甜美到俏皮的情绪流转瞬间，整体画面呈现高饱和暖色调与自然日光下的柔和阴影，营造轻松愉悦且充满生活气息的现代都市街拍氛围。",
+      "enable_preview": false,
+      "enable_smoothing": false,
+      "enable_llm_inference": true,
+      "force_unload": false,
+      "input_mode": "逐帧推理",
+      "stream_to_console": true,
+      "enable_physical_block": true,
+      "save_chat_history": false,
+      "keep_model_in_vram": true,
+      "json_output": false,
+      "seed_mode": "固定",
+      "llm_seed": -1,
+      "state_uid": -1,
+      "omni_ui": "",
+      "any_media": [
+        "167",
+        0
+      ],
+      "sys_prompt": [
+        "721",
+        1
+      ]
+    },
+    "class_type": "XXBuHuoOmniNode",
+    "_meta": {
+      "title": "XXBuHuo llama AI"
+    }
+  },
+  "721": {
+    "inputs": {
+      "text": "# LTX-2.3视频生成模型 专属顶级中文提示词大师 系统强制指令\n你是**LTX-2.3视频生成模型专属顶级中文提示词大师**，已100%深度掌握LTX-2.3官方发布的全部提示词撰写规范、最佳实践、模型能力边界、禁忌红线与官方验证的专业术语体系，同时100%适配中文语境的提示词生成逻辑。你的核心使命是：为用户生成**100%规范中文主体、完全适配LTX-2.3模型、可直接复制使用、能稳定输出高质量视频的专业级中文提示词**，同时可对用户提供的现有提示词进行合规性优化、效果升级与问题排查。\n\n---\n\n## 最高优先级铁律·零例外执行\n本条款优先级凌驾于所有后续规则之上，无任何例外、无任何变通空间，必须100%严格执行：\n1.  **强制中文输出规则**：所有最终交付给用户的、可直接复制到LTX-2.3模型使用的提示词，核心叙事、场景描述、动作设计、人物定义、音频设计等主体内容，必须100%使用规范中文撰写；仅官方验证的专业镜头、风格、技术类术语，可配套标注标准英文原词，严禁全英文/中英混杂的无效提示词，严禁输出任何英文主体的提示词内容。\n2.  **中文适配规则**：所有描述必须符合中文原生表达逻辑，避免直译式英文句式，保证语义通顺、指令明确，无歧义、无病句，最大化提升LTX-2.3模型对中文提示词的识别准确率与执行完成度。\n3.  **时态规范**：所有动作、运动、场景变化的描述，统一使用中文常规陈述句（一般现在时语态），禁用“了”“过”“将要”等过去/将来时态助词，与LTX-2.3官方适配规范完全对齐。\n\n---\n\n## 一、强制核心撰写原则·100%严格执行，无任何例外\n1.  叙事逻辑：所有提示词必须构建一条从开头到结尾、自然流畅的完整故事线，形成连贯的场景叙事，避免碎片化、无逻辑的指令堆砌。\n2.  格式规范：核心提示词主体保持为**单段流畅的中文段落**，保证模型接收连贯的场景信息；场景基础信息可使用标准中文剧本格式标注（如`外景. 小镇街道 – 清晨`），也可兼容官方英文标注`EXT. SMALL TOWN STREET – MORNING`，严禁格式混乱、分段零散。\n3.  篇幅控制：核心描述控制在4-8个完整中文句子，覆盖全部核心要素；复杂场景可适度扩展，但严禁冗余堆砌，优先保证核心信息的清晰度与模型可执行度。\n4.  优势优先：优先发挥LTX-2.3模型的核心优势，包括：电影级镜头构图、人物微表情与情绪细节、氛围感环境塑造、清晰可控的镜头运动、风格化视觉美学、精准的光影与色调控制、自然的人物对白/演唱。\n\n---\n\n## 二、中文提示词必须包含的7大核心要素·缺一不可，按叙事逻辑自然融合\n1.  **镜头与风格确立**\n    开篇明确标注场景属性（室内/内景、室外/外景）、时间、景别、电影类型、核心视觉风格，使用官方验证的风格术语，明确画面的整体调性与品类特征，中文标注清晰，无模糊表述。\n2.  **场景与氛围设定**\n    精准描述环境空间、光线条件、色彩体系、表面质感、大气氛围元素，用可落地的视觉细节塑造画面情绪，而非空泛的情绪形容词，保证每一个描述都对应可呈现的视觉画面。\n3.  **连贯动作序列**\n    按时间顺序，描述从开场到结尾的核心动作，形成自然的线性叙事，保证动作逻辑连贯、符合物理规律，避免非线性混乱动作、无逻辑的画面跳转。\n4.  **人物与主体定义**\n    明确人物的年龄、外貌、发型、穿着、标志性特征；所有情绪必须通过**视觉化的肢体动作、面部表情细节**呈现，严禁单独使用无视觉支撑的情绪标签（如禁止只写“她很伤心”，需写“她眉头紧锁，肩膀微微颤抖，眼泪顺着脸颊无声滑落”）。\n5.  **精准镜头运动**\n    明确指定镜头的运动方式、机位变化，以及**镜头运动后呈现的画面内容**，清晰定义相机与拍摄主体的相对关系，使用官方验证的镜头语言术语，保证模型精准执行运镜，中文描述无歧义。\n6.  **音频与对白设计**\n    清晰描述环境背景音、音乐风格、音效；人物对白需放在中文双引号内，提前标注说话人、语气、口音、语言，格式为：`角色名(语气/口音)：“对白内容”`，符合中文剧本规范。\n7.  **技术与风格收尾**\n    结尾补充画面技术特性、节奏控制、动画/影视风格的强化描述，锁定最终的画面质感与叙事节奏，保证整体风格统一。\n\n---\n\n## 三、官方验证·中文适配专业术语库（优先使用，保证模型高识别度）\n1.  **风格分类术语（中文优先，可配套标注英文）**\n    - 动画类：定格动画(stop-motion)、2D/3D动画、黏土动画(claymation)、手绘动画(hand-drawn)\n    - 风格化类：漫画风、赛博朋克、8-bit像素风、超现实主义、极简主义、油画质感、插画风格\n    - 影视类型类：年代剧、黑色电影(film noir)、奇幻题材、史诗太空歌剧、惊悚片、现代爱情片、实验电影、文艺片(arthouse)、纪录片\n2.  **视觉细节术语（纯中文，模型高识别度）**\n    - 光线：摇曳的烛光、霓虹光晕、自然日光、戏剧化阴影、暖调金光、柔和轮廓光、逆光\n    - 质感：粗糙石面、光滑金属、磨损织物、亮面质感\n    - 色彩：鲜艳明快、低饱和、单色、高对比度\n    - 氛围元素：雾气、降雨、尘埃、粒子、烟雾、轻烟飘散\n3.  **声音与对白术语（纯中文，符合中文表达习惯）**\n    - 环境音：咖啡店环境杂音、雨滴坠落与风声、森林环境音搭配鸟鸣、观众低语声\n    - 对白风格：活力满满的播报音、低沉有磁性的嗓音、失真电台风格、机械单调音、孩童般的好奇语气、低语、喃喃自语、大喊、尖叫\n4.  **镜头技术术语（中文优先，可配套标注英文）**\n    - 运镜语言：跟随拍摄(follows)、轨道运镜(tracks)、横摇扫过(pans across)、环绕拍摄(circles around)、向上摇镜(tilts upward)、向前推镜(pushes in)、向后拉镜(pulls back)、俯拍(overhead view)、手持运镜(handheld movement)、过肩镜头(over-the-shoulder)、全景定场镜头(wide establishing shot)、固定机位(static frame)、轨道推/拉(dolly in/out)、弧形环绕(arcs around)\n    - 画面特性：定格动画抖动感、像素化边缘、镜头光晕(lens flares)、胶片颗粒(film grain)、浅景深、焦外虚化(bokeh)、动态模糊(motion blur)\n    - 景别尺度：宏大开阔、史诗感、特写感、密闭感、全景、中景、近景、特写、极端特写\n    - 节奏特效：慢动作、延时摄影、快速剪辑、长镜头、一镜到底(continuous shot)、定格画面(freeze-frame)、淡入(fade-in)、淡出(fade-out)、无缝转场、动态运镜、骤停\n\n---\n\n## 四、严格禁止的禁忌红线·100%不得触碰，避免画面崩坏/内容缺失\n1.  禁止使用无视觉化支撑的内部情绪标签，不得单独出现“伤心”“开心”“困惑”等纯情绪形容词，必须搭配对应的面部/肢体动作细节。\n2.  禁止要求生成可读文本、logo、品牌名、标识标牌、印刷内容，LTX-2.3无法生成稳定、一致、可读的文字内容，中文文本同理严禁。\n3.  禁止设计复杂非线性物理动作、混乱高速的扭曲运动（如跳跃、杂耍、快速多方向翻转），避免画面出现伪影、穿模、动作崩坏。\n4.  禁止场景复杂度过载，不得同时出现过多人物、多层并行的独立动作、过量冗余的物体元素，否则会大幅降低画面准确性与内容完成度。\n5.  禁止出现逻辑冲突的光源设定，不得无合理剧情动机地混合矛盾光源（如同时出现暖日落光+冷室内荧光）。\n6.  禁止过度冗长、多层嵌套的复杂指令，动作、人物、限制条件越多，内容缺失概率越高，需优先精简核心内容，通过迭代补充细节。\n7.  禁止输出中英混杂、句式混乱的提示词，核心叙事内容必须使用规范中文，严禁为了适配模型强行直译英文句式，导致语义歧义、模型识别失败。\n\n---\n\n## 五、最终执行与输出铁律·零例外\n1.  当用户提出视频生成的需求描述时，你必须严格遵循以上全部规范，直接生成**可直接复制到LTX-2.3模型中使用的完整中文提示词**，无多余注释、无格式错误、无违规内容。\n2.  所有输出的提示词，必须100%覆盖7大核心要素，严格遵守所有禁忌红线，优先适配LTX-2.3模型的中文识别逻辑，保证生成效果稳定。\n3.  当用户提供现有LTX-2.3提示词时，你需按照以上规范，完成：合规性校验、违规内容修正、缺失核心要素补充、生成效果优化、中文规范适配，最终交付优化后的完整中文提示词。\n4.  所有输出内容必须完全对齐LTX-2.3官方中文适配示例的语态、格式、逻辑，保证模型的识别度与执行准确率，严禁输出不符合规范的内容。\n5.  无论用户输入的需求是中文还是英文，最终交付的可直接使用的提示词，必须以规范中文为主体，仅保留必要的官方认可专业术语英文标注，严禁全英文输出。",
+      "展开参数": false,
+      "输出模式": false,
+      "段落优化": true,
+      "分段方式": "空行",
+      "输出段落": 0,
+      "输入端口": 1,
+      "选取段落": "0",
+      "筛选段落": 0,
+      "更新端口": null
+    },
+    "class_type": "XXBuHuoTextProcessor",
+    "_meta": {
+      "title": "XXBuHuo 多功能文本处理"
+    }
+  },
+  "610:442": {
+    "inputs": {
+      "clean_file_cache": true,
+      "clean_processes": true,
+      "clean_dlls": true,
+      "retry_times": 3,
+      "anything": [
+        "610:441",
+        0
+      ]
+    },
+    "class_type": "RAMCleanup",
+    "_meta": {
+      "title": "🎈RAM-Cleanup"
+    }
+  },
+  "610:441": {
+    "inputs": {
+      "offload_model": true,
+      "offload_cache": true,
+      "anything": [
+        "610:483",
+        0
+      ]
+    },
+    "class_type": "VRAMCleanup",
+    "_meta": {
+      "title": "🎈VRAM-Cleanup"
+    }
+  },
+  "610:481": {
+    "inputs": {
+      "fps": [
+        "361",
+        0
+      ],
+      "images": [
+        "610:442",
+        0
+      ],
+      "audio": [
+        "610:482",
+        0
+      ]
+    },
+    "class_type": "CreateVideo",
+    "_meta": {
+      "title": "创建视频"
+    }
+  },
+  "610:482": {
+    "inputs": {
+      "samples": [
+        "591:125",
+        1
+      ],
+      "audio_vae": [
+        "196",
+        0
+      ]
+    },
+    "class_type": "LTXVAudioVAEDecode",
+    "_meta": {
+      "title": "LTXV音频VAE解码"
+    }
+  },
+  "610:483": {
+    "inputs": {
+      "tile_size": 512,
+      "overlap": 64,
+      "temporal_size": 512,
+      "temporal_overlap": 4,
+      "samples": [
+        "591:125",
+        0
+      ],
+      "vae": [
+        "184",
+        0
+      ]
+    },
+    "class_type": "VAEDecodeTiled",
+    "_meta": {
+      "title": "VAE解码（分块）"
+    }
+  },
+  "574:407": {
+    "inputs": {
+      "chunks": 4,
+      "dim_threshold": 4096,
+      "model": [
+        "574:406",
+        0
+      ]
+    },
+    "class_type": "LTXVChunkFeedForward",
+    "_meta": {
+      "title": "LTXV Chunk FeedForward"
+    }
+  },
+  "574:406": {
+    "inputs": {
+      "sage_attention": "auto",
+      "allow_compile": false,
+      "model": [
+        "417",
+        0
+      ]
+    },
+    "class_type": "PathchSageAttentionKJ",
+    "_meta": {
+      "title": "Patch Sage Attention KJ"
+    }
+  },
+  "591:405": {
+    "inputs": {
+      "width": [
+        "163",
+        0
+      ],
+      "height": [
+        "163",
+        1
+      ],
+      "length": [
+        "360",
+        1
+      ],
+      "batch_size": 1
+    },
+    "class_type": "EmptyLTXVLatentVideo",
+    "_meta": {
+      "title": "空Latent视频（LTXV）"
+    }
+  },
+  "591:129": {
+    "inputs": {
+      "cfg": 2,
+      "model": [
+        "697",
+        0
+      ],
+      "positive": [
+        "591:107",
+        0
+      ],
+      "negative": [
+        "591:107",
+        1
+      ]
+    },
+    "class_type": "CFGGuider",
+    "_meta": {
+      "title": "CFG引导器"
+    }
+  },
+  "591:109": {
+    "inputs": {
+      "video_latent": [
+        "591:161",
+        0
+      ],
+      "audio_latent": [
+        "591:199",
+        0
+      ]
+    },
+    "class_type": "LTXVConcatAVLatent",
+    "_meta": {
+      "title": "LTXVConcatAVLatent"
+    }
+  },
+  "591:552": {
+    "inputs": {
+      "steps": [
+        "582",
+        0
+      ],
+      "max_shift": 2.05,
+      "base_shift": 0.95,
+      "stretch": true,
+      "terminal": 0.1,
+      "latent": [
+        "591:109",
+        0
+      ]
+    },
+    "class_type": "LTXVScheduler",
+    "_meta": {
+      "title": "LTXV调度器"
+    }
+  },
+  "591:113": {
+    "inputs": {
+      "noise": [
+        "114",
+        0
+      ],
+      "guider": [
+        "591:129",
+        0
+      ],
+      "sampler": [
+        "137",
+        0
+      ],
+      "sigmas": [
+        "591:552",
+        0
+      ],
+      "latent_image": [
+        "591:109",
+        0
+      ]
+    },
+    "class_type": "SamplerCustomAdvanced",
+    "_meta": {
+      "title": "自定义采样器（高级）"
+    }
+  },
+  "591:103": {
+    "inputs": {
+      "cfg": 1,
+      "model": [
+        "417",
+        0
+      ],
+      "positive": [
+        "591:107",
+        0
+      ],
+      "negative": [
+        "591:107",
+        1
+      ]
+    },
+    "class_type": "CFGGuider",
+    "_meta": {
+      "title": "CFG引导器"
+    }
+  },
+  "591:118": {
+    "inputs": {
+      "samples": [
+        "591:116",
+        0
+      ],
+      "upscale_model": [
+        "189",
+        0
+      ],
+      "vae": [
+        "184",
+        0
+      ]
+    },
+    "class_type": "LTXVLatentUpsampler",
+    "_meta": {
+      "title": "spatial"
+    }
+  },
+  "591:117": {
+    "inputs": {
+      "video_latent": [
+        "591:160",
+        0
+      ],
+      "audio_latent": [
+        "591:116",
+        1
+      ]
+    },
+    "class_type": "LTXVConcatAVLatent",
+    "_meta": {
+      "title": "LTXVConcatAVLatent"
+    }
+  },
+  "591:119": {
+    "inputs": {
+      "noise": [
+        "567",
+        0
+      ],
+      "guider": [
+        "591:553",
+        0
+      ],
+      "sampler": [
+        "539",
+        0
+      ],
+      "sigmas": [
+        "451",
+        0
+      ],
+      "latent_image": [
+        "591:117",
+        0
+      ]
+    },
+    "class_type": "SamplerCustomAdvanced",
+    "_meta": {
+      "title": "自定义采样器（高级）"
+    }
+  },
+  "591:554": {
+    "inputs": {
+      "offload_model": true,
+      "offload_cache": true,
+      "anything": [
+        "591:103",
+        0
+      ]
+    },
+    "class_type": "VRAMCleanup",
+    "_meta": {
+      "title": "🎈VRAM-Cleanup"
+    }
+  },
+  "591:125": {
+    "inputs": {
+      "av_latent": [
+        "591:119",
+        1
+      ]
+    },
+    "class_type": "LTXVSeparateAVLatent",
+    "_meta": {
+      "title": "LTXV分离音视频潜空间"
+    }
+  },
+  "591:553": {
+    "inputs": {
+      "clean_file_cache": true,
+      "clean_processes": true,
+      "clean_dlls": true,
+      "retry_times": 3,
+      "anything": [
+        "591:554",
+        0
+      ]
+    },
+    "class_type": "RAMCleanup",
+    "_meta": {
+      "title": "🎈RAM-Cleanup"
+    }
+  },
+  "591:160": {
+    "inputs": {
+      "strength": 1,
+      "bypass": [
+        "521",
+        0
+      ],
+      "vae": [
+        "184",
+        0
+      ],
+      "image": [
+        "162",
+        0
+      ],
+      "latent": [
+        "591:118",
+        0
+      ]
+    },
+    "class_type": "LTXVImgToVideoInplace",
+    "_meta": {
+      "title": "true=忽略图像参考"
+    }
+  },
+  "591:107": {
+    "inputs": {
+      "frame_rate": [
+        "361",
+        0
+      ],
+      "positive": [
+        "697",
+        1
+      ],
+      "negative": [
+        "679",
+        0
+      ]
+    },
+    "class_type": "LTXVConditioning",
+    "_meta": {
+      "title": "LTXV条件"
+    }
+  },
+  "591:398": {
+    "inputs": {
+      "expression": "a",
+      "a": [
+        "361",
+        0
+      ]
+    },
+    "class_type": "SimpleCalculatorKJ",
+    "_meta": {
+      "title": "SimpleCalculatorKJ"
+    }
+  },
+  "591:712:707": {
+    "inputs": {
+      "clean_file_cache": true,
+      "clean_processes": true,
+      "clean_dlls": true,
+      "retry_times": 3,
+      "anything": [
+        "591:712:708",
+        0
+      ]
+    },
+    "class_type": "RAMCleanup",
+    "_meta": {
+      "title": "🎈RAM-Cleanup"
+    }
+  },
+  "591:712:708": {
+    "inputs": {
+      "offload_model": true,
+      "offload_cache": true,
+      "anything": [
+        "591:712:711",
+        0
+      ]
+    },
+    "class_type": "VRAMCleanup",
+    "_meta": {
+      "title": "🎈VRAM-Cleanup"
+    }
+  },
+  "591:712:709": {
+    "inputs": {
+      "fps": 24,
+      "images": [
+        "591:712:707",
+        0
+      ],
+      "audio": [
+        "591:712:710",
+        0
+      ]
+    },
+    "class_type": "CreateVideo",
+    "_meta": {
+      "title": "创建视频"
+    }
+  },
+  "591:712:710": {
+    "inputs": {
+      "samples": [
+        "591:116",
+        1
+      ],
+      "audio_vae": [
+        "196",
+        0
+      ]
+    },
+    "class_type": "LTXVAudioVAEDecode",
+    "_meta": {
+      "title": "LTXV音频VAE解码"
+    }
+  },
+  "591:712:711": {
+    "inputs": {
+      "tile_size": 512,
+      "overlap": 64,
+      "temporal_size": 512,
+      "temporal_overlap": 4,
+      "samples": [
+        "591:116",
+        0
+      ],
+      "vae": [
+        "184",
+        0
+      ]
+    },
+    "class_type": "VAEDecodeTiled",
+    "_meta": {
+      "title": "VAE解码（分块）"
+    }
+  },
+  "591:161": {
+    "inputs": {
+      "strength": 1,
+      "bypass": [
+        "521",
+        0
+      ],
+      "vae": [
+        "184",
+        0
+      ],
+      "image": [
+        "162",
+        0
+      ],
+      "latent": [
+        "591:405",
+        0
+      ]
+    },
+    "class_type": "LTXVImgToVideoInplace",
+    "_meta": {
+      "title": "true=忽略图像参考"
+    }
+  },
+  "591:116": {
+    "inputs": {
+      "av_latent": [
+        "591:113",
+        1
+      ]
+    },
+    "class_type": "LTXVSeparateAVLatent",
+    "_meta": {
+      "title": "LTXV分离音视频潜空间"
+    }
+  },
+  "591:199": {
+    "inputs": {
+      "frames_number": [
+        "360",
+        1
+      ],
+      "frame_rate": [
+        "591:398",
+        1
+      ],
+      "batch_size": 1,
+      "audio_vae": [
+        "196",
+        0
+      ]
+    },
+    "class_type": "LTXVEmptyLatentAudio",
+    "_meta": {
+      "title": "LTXV 空音频潜空间"
+    }
+  },
+  "591:713": {
+    "inputs": {
+      "filename_prefix": "video",
+      "format": "auto",
+      "codec": "auto",
+      "video": [
+        "591:712:709",
+        0
+      ]
+    },
+    "class_type": "SaveVideo",
+    "_meta": {
+      "title": "保存视频"
+    }
+  }
+}

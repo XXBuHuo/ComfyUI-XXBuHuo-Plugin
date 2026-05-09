@@ -1,0 +1,887 @@
+{
+  "id": "7734c3f0-2dcd-441d-86d0-f5b312cc7d33",
+  "revision": 0,
+  "last_node_id": 301,
+  "last_link_id": 178,
+  "nodes": [
+    {
+      "id": 282,
+      "type": "LoadImage",
+      "pos": [
+        11545.138631584325,
+        1958.3773870386626
+      ],
+      "size": [
+        270,
+        314.0000000000002
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            155
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "微信图片_20251126214400_17392_71.png",
+        "image"
+      ]
+    },
+    {
+      "id": 269,
+      "type": "XXBuHuoGridSplitter",
+      "pos": [
+        11840.530164096612,
+        1958.3773870386626
+      ],
+      "size": [
+        270,
+        58
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 155
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": [
+            157,
+            162
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "XXBuHuoGridSplitter"
+      },
+      "widgets_values": [
+        "2*2"
+      ]
+    },
+    {
+      "id": 288,
+      "type": "PreviewImage",
+      "pos": [
+        11970.530164096612,
+        2068.1434431531634
+      ],
+      "size": [
+        140,
+        246
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 162
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 287,
+      "type": "PreviewImage",
+      "pos": [
+        12448.413624911942,
+        2119.1791026833407
+      ],
+      "size": [
+        140,
+        246.00000000000023
+      ],
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 161
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 286,
+      "type": "PreviewImage",
+      "pos": [
+        12651.086491214413,
+        2119.1791026833407
+      ],
+      "size": [
+        140,
+        246.00000000000023
+      ],
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 160
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 283,
+      "type": "PreviewImage",
+      "pos": [
+        12448.413624911942,
+        1814.7353827473155
+      ],
+      "size": [
+        140,
+        246.00000000000023
+      ],
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 158
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 285,
+      "type": "PreviewImage",
+      "pos": [
+        12651.086491214413,
+        1814.7353827473155
+      ],
+      "size": [
+        140,
+        246
+      ],
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 159
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 284,
+      "type": "XXBuHuoImageSplitter",
+      "pos": [
+        12155.990649058873,
+        1958.3773870386626
+      ],
+      "size": [
+        210,
+        142
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image_batch",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 157
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image_1",
+          "type": "IMAGE",
+          "links": [
+            158,
+            165
+          ]
+        },
+        {
+          "name": "image_2",
+          "type": "IMAGE",
+          "links": [
+            159,
+            166
+          ]
+        },
+        {
+          "name": "image_3",
+          "type": "IMAGE",
+          "links": [
+            160,
+            167
+          ]
+        },
+        {
+          "name": "image_4",
+          "type": "IMAGE",
+          "links": [
+            161,
+            168
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "XXBuHuoImageSplitter"
+      },
+      "widgets_values": [
+        4,
+        false,
+        "Update outputs"
+      ]
+    },
+    {
+      "id": 290,
+      "type": "XXBuHuoImageCombiner",
+      "pos": [
+        12873.125963806791,
+        1952.1013382128192
+      ],
+      "size": [
+        210,
+        142
+      ],
+      "flags": {},
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image_1",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 165
+        },
+        {
+          "name": "image_2",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 166
+        },
+        {
+          "name": "image_3",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 167
+        },
+        {
+          "name": "image_4",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 168
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": [
+            169
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "XXBuHuoImageCombiner"
+      },
+      "widgets_values": [
+        4,
+        false,
+        "Update inputs"
+      ]
+    },
+    {
+      "id": 291,
+      "type": "XXBuHuoGridCombiner",
+      "pos": [
+        13141.70731850204,
+        1951.1783782310479
+      ],
+      "size": [
+        270,
+        58
+      ],
+      "flags": {},
+      "order": 18,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 169
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": [
+            170
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "XXBuHuoGridCombiner"
+      },
+      "widgets_values": [
+        "2*2"
+      ]
+    },
+    {
+      "id": 292,
+      "type": "PreviewImage",
+      "pos": [
+        13486.219234363973,
+        1952.253898012296
+      ],
+      "size": [
+        140,
+        246
+      ],
+      "flags": {},
+      "order": 19,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 170
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 296,
+      "type": "PreviewImage",
+      "pos": [
+        12590.495717749953,
+        2526.0985414212546
+      ],
+      "size": [
+        140,
+        246
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 172
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 294,
+      "type": "XXBuHuoImageBatchToList",
+      "pos": [
+        12158.151291556956,
+        2526.0985414212546
+      ],
+      "size": [
+        282.2828125,
+        82
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "any_input",
+          "type": "*",
+          "link": 171
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image_list",
+          "shape": 6,
+          "type": "IMAGE",
+          "links": [
+            172
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "XXBuHuoImageBatchToList"
+      },
+      "widgets_values": [
+        1,
+        4
+      ]
+    },
+    {
+      "id": 297,
+      "type": "PreviewImage",
+      "pos": [
+        12594.65666322106,
+        2880.338285840552
+      ],
+      "size": [
+        140,
+        246
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 174
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 298,
+      "type": "XXBuHuoImageBatchToList",
+      "pos": [
+        12158.151291556956,
+        2653.394994165943
+      ],
+      "size": [
+        282.2828125,
+        82
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "any_input",
+          "type": "*",
+          "link": 175
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image_list",
+          "shape": 6,
+          "type": "IMAGE",
+          "links": [
+            176
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "XXBuHuoImageBatchToList"
+      },
+      "widgets_values": [
+        1,
+        -1
+      ]
+    },
+    {
+      "id": 299,
+      "type": "PreviewImage",
+      "pos": [
+        12803.07730609548,
+        2526.0985414212546
+      ],
+      "size": [
+        140,
+        246
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 176
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 301,
+      "type": "PreviewImage",
+      "pos": [
+        12823.249916857492,
+        2880.338285840552
+      ],
+      "size": [
+        140,
+        246
+      ],
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 178
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 293,
+      "type": "XXBuHuoImageListToBatch",
+      "pos": [
+        12158.151291556956,
+        2880.338285840552
+      ],
+      "size": [
+        282.2828125,
+        82
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "any_input",
+          "type": "*",
+          "link": 173
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image_batch",
+          "type": "IMAGE",
+          "links": [
+            174
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "XXBuHuoImageListToBatch"
+      },
+      "widgets_values": [
+        1,
+        2
+      ]
+    },
+    {
+      "id": 295,
+      "type": "LoadVideo",
+      "pos": [
+        11810.196593660345,
+        2695.674550639406
+      ],
+      "size": [
+        270,
+        236
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "VIDEO",
+          "type": "VIDEO",
+          "links": [
+            171,
+            173,
+            175,
+            177
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadVideo"
+      },
+      "widgets_values": [
+        "1.mp4",
+        "image"
+      ]
+    },
+    {
+      "id": 300,
+      "type": "XXBuHuoImageListToBatch",
+      "pos": [
+        12158.151291556956,
+        3005.7435563263034
+      ],
+      "size": [
+        282.2828125,
+        82
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "any_input",
+          "type": "*",
+          "link": 177
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image_batch",
+          "type": "IMAGE",
+          "links": [
+            178
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "XXBuHuoImageListToBatch"
+      },
+      "widgets_values": [
+        1,
+        -1
+      ]
+    }
+  ],
+  "links": [
+    [
+      155,
+      282,
+      0,
+      269,
+      0,
+      "IMAGE"
+    ],
+    [
+      157,
+      269,
+      0,
+      284,
+      0,
+      "IMAGE"
+    ],
+    [
+      158,
+      284,
+      0,
+      283,
+      0,
+      "IMAGE"
+    ],
+    [
+      159,
+      284,
+      1,
+      285,
+      0,
+      "IMAGE"
+    ],
+    [
+      160,
+      284,
+      2,
+      286,
+      0,
+      "IMAGE"
+    ],
+    [
+      161,
+      284,
+      3,
+      287,
+      0,
+      "IMAGE"
+    ],
+    [
+      162,
+      269,
+      0,
+      288,
+      0,
+      "IMAGE"
+    ],
+    [
+      165,
+      284,
+      0,
+      290,
+      0,
+      "IMAGE"
+    ],
+    [
+      166,
+      284,
+      1,
+      290,
+      1,
+      "IMAGE"
+    ],
+    [
+      167,
+      284,
+      2,
+      290,
+      2,
+      "IMAGE"
+    ],
+    [
+      168,
+      284,
+      3,
+      290,
+      3,
+      "IMAGE"
+    ],
+    [
+      169,
+      290,
+      0,
+      291,
+      0,
+      "IMAGE"
+    ],
+    [
+      170,
+      291,
+      0,
+      292,
+      0,
+      "IMAGE"
+    ],
+    [
+      171,
+      295,
+      0,
+      294,
+      0,
+      "VIDEO"
+    ],
+    [
+      172,
+      294,
+      0,
+      296,
+      0,
+      "IMAGE"
+    ],
+    [
+      173,
+      295,
+      0,
+      293,
+      0,
+      "VIDEO"
+    ],
+    [
+      174,
+      293,
+      0,
+      297,
+      0,
+      "IMAGE"
+    ],
+    [
+      175,
+      295,
+      0,
+      298,
+      0,
+      "VIDEO"
+    ],
+    [
+      176,
+      298,
+      0,
+      299,
+      0,
+      "IMAGE"
+    ],
+    [
+      177,
+      295,
+      0,
+      300,
+      0,
+      "VIDEO"
+    ],
+    [
+      178,
+      300,
+      0,
+      301,
+      0,
+      "IMAGE"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.8954302432552611,
+      "offset": [
+        -11092.94703904287,
+        -1685.6885016838671
+      ]
+    },
+    "frontendVersion": "1.42.15"
+  },
+  "version": 0.4
+}

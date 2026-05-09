@@ -1,0 +1,219 @@
+{
+  "id": "14c5220c-fb2b-4014-a7d0-853f8f3698df",
+  "revision": 0,
+  "last_node_id": 5,
+  "last_link_id": 3,
+  "nodes": [
+    {
+      "id": 4,
+      "type": "XXBuHuo_JointController",
+      "pos": [
+        -7732.027932228027,
+        4166.2573657615785
+      ],
+      "size": [
+        270,
+        58
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "CTRL",
+          "shape": 7,
+          "type": "XX_CTRL",
+          "link": 2
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {}
+        },
+        "Node name for S&R": "XXBuHuo_JointController"
+      },
+      "widgets_values": [
+        "静音 (Mute - 关闭)"
+      ]
+    },
+    {
+      "id": 5,
+      "type": "XXBuHuo_CategorySelector",
+      "pos": [
+        -8331.738163616654,
+        4365.484705036817
+      ],
+      "size": [
+        270,
+        58
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "激活 (Active)",
+          "type": "*",
+          "links": [
+            3
+          ]
+        }
+      ],
+      "properties": {
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {}
+        },
+        "Node name for S&R": "XXBuHuo_CategorySelector"
+      },
+      "widgets_values": [
+        "Group 1"
+      ]
+    },
+    {
+      "id": 2,
+      "type": "XXBuHuo_NexusRouter",
+      "pos": [
+        -8040.930340147142,
+        4165.9577916158205
+      ],
+      "size": [
+        300,
+        258
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "激活 (Active)",
+          "type": "*",
+          "widget": {
+            "name": "激活 (Active)"
+          },
+          "link": 3
+        },
+        {
+          "color_off": "rgba(0,0,0,0)",
+          "label": " ",
+          "name": "G1_header",
+          "type": "*",
+          "link": null
+        },
+        {
+          "label": " ",
+          "name": "G1_Port1",
+          "type": "*",
+          "link": null
+        },
+        {
+          "label": " ",
+          "name": "G1_Port2",
+          "type": "*",
+          "link": null
+        },
+        {
+          "label": " ",
+          "name": "G1_Port3",
+          "type": "*",
+          "link": null
+        },
+        {
+          "label": " ",
+          "name": "G1_Port4",
+          "type": "*",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "label": "CTRL",
+          "name": "CTRL",
+          "type": "XX_CTRL",
+          "links": [
+            2
+          ]
+        },
+        {
+          "label": " ",
+          "name": " ",
+          "type": "*",
+          "links": null
+        },
+        {
+          "label": " ",
+          "name": " ",
+          "type": "*",
+          "links": null
+        },
+        {
+          "label": " ",
+          "name": " ",
+          "type": "*",
+          "links": null
+        },
+        {
+          "label": " ",
+          "name": " ",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "properties": {
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {}
+        },
+        "Node name for S&R": "XXBuHuo_NexusRouter"
+      },
+      "widgets_values": [
+        1,
+        4,
+        "Off",
+        "Group 1",
+        "Group 1",
+        null
+      ],
+      "customGroupNames": [
+        "Group 1"
+      ],
+      "groupNamesInput": "Group 1"
+    }
+  ],
+  "links": [
+    [
+      2,
+      2,
+      0,
+      4,
+      0,
+      "XX_CTRL"
+    ],
+    [
+      3,
+      5,
+      0,
+      2,
+      0,
+      "COMBO"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "workflowRendererVersion": "LG",
+    "ue_links": [],
+    "ds": {
+      "scale": 2.357947691000003,
+      "offset": [
+        8440.410547754034,
+        -3967.922490132671
+      ]
+    },
+    "frontendVersion": "1.41.18"
+  },
+  "version": 0.4
+}

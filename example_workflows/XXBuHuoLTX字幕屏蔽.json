@@ -1,0 +1,132 @@
+{
+  "id": "14c5220c-fb2b-4014-a7d0-853f8f3698df",
+  "revision": 0,
+  "last_node_id": 7,
+  "last_link_id": 5,
+  "nodes": [
+    {
+      "id": 7,
+      "type": "EmptyLatentImage",
+      "pos": [
+        -8336.506631252776,
+        4292.781265805995
+      ],
+      "size": [
+        270,
+        106
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            5
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "EmptyLatentImage",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        }
+      },
+      "widgets_values": [
+        1280,
+        728,
+        1
+      ]
+    },
+    {
+      "id": 6,
+      "type": "XXBuHuo_LTX_Subtitle_Blocker",
+      "pos": [
+        -8042.319841459817,
+        4232.381061156159
+      ],
+      "size": [
+        270,
+        142
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": null
+        },
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": null
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": null
+        },
+        {
+          "name": "video_latent",
+          "type": "LATENT",
+          "link": 5
+        }
+      ],
+      "outputs": [
+        {
+          "name": "SPLIT_MODEL",
+          "type": "MODEL",
+          "links": null
+        },
+        {
+          "name": "POSITIVE",
+          "type": "CONDITIONING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "XXBuHuo_LTX_Subtitle_Blocker",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        }
+      },
+      "widgets_values": [
+        0.5,
+        "On"
+      ]
+    }
+  ],
+  "links": [
+    [
+      5,
+      7,
+      0,
+      6,
+      3,
+      "LATENT"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "workflowRendererVersion": "LG",
+    "ue_links": [],
+    "ds": {
+      "scale": 2.357947691000003,
+      "offset": [
+        8607.929107011167,
+        -3979.7972234470994
+      ]
+    },
+    "frontendVersion": "1.41.18"
+  },
+  "version": 0.4
+}

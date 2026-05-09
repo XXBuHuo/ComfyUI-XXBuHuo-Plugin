@@ -1,0 +1,34 @@
+onnxruntime-gpu
+decord
+opencv-python
+requests
+huggingface-hub
+modelscope
+facenet-pytorch
+insightfacex
+numpy
+Pillow
+scenedetect
+
+#默认v0.3.38-cu130-Basic版本，与您cuda不匹配时，请删除下方文件，并保存。你可根据插件主页或插件文件夹，查看README.md文档里的安装说明，进行安装操作。
+
+#for Windows
+llama-cpp-python @ https://github.com/JamePeng/llama-cpp-python/releases/download/v0.3.38-cu130-Basic-win-20260504/llama_cpp_python-0.3.38+cu130.basic-cp310-cp310-win_amd64.whl; python_version == "3.10" and platform_system == "Windows"
+llama-cpp-python @ https://github.com/JamePeng/llama-cpp-python/releases/download/v0.3.38-cu130-Basic-win-20260504/llama_cpp_python-0.3.38+cu130.basic-cp311-cp311-win_amd64.whl; python_version == "3.11" and platform_system == "Windows"
+llama-cpp-python @ https://github.com/JamePeng/llama-cpp-python/releases/download/v0.3.38-cu130-Basic-win-20260504/llama_cpp_python-0.3.38+cu130.basic-cp312-cp312-win_amd64.whl; python_version == "3.12" and platform_system == "Windows"
+llama-cpp-python @ https://github.com/JamePeng/llama-cpp-python/releases/download/v0.3.38-cu130-Basic-win-20260504/llama_cpp_python-0.3.38+cu130.basic-cp313-cp313-win_amd64.whl; python_version == "3.13" and platform_system == "Windows"
+llama-cpp-python @ https://github.com/JamePeng/llama-cpp-python/releases/download/v0.3.38-cu130-Basic-win-20260504/llama_cpp_python-0.3.38+cu130.basic-cp314-cp314-win_amd64.whl; python_version == "3.14" and platform_system == "Windows"
+
+# for Linux
+llama-cpp-python @ https://github.com/JamePeng/llama-cpp-python/releases/download/v0.3.38-cu130-Basic-linux-20260504/llama_cpp_python-0.3.38+cu130.basic-cp310-cp310-linux_x86_64.whl; python_version == "3.10" and platform_system == "Linux"
+llama-cpp-python @ https://github.com/JamePeng/llama-cpp-python/releases/download/v0.3.38-cu130-Basic-linux-20260504/llama_cpp_python-0.3.38+cu130.basic-cp311-cp311-linux_x86_64.whl; python_version == "3.11" and platform_system == "Linux"
+llama-cpp-python @ https://github.com/JamePeng/llama-cpp-python/releases/download/v0.3.38-cu130-Basic-linux-20260504/llama_cpp_python-0.3.38+cu130.basic-cp312-cp312-linux_x86_64.whl; python_version == "3.12" and platform_system == "Linux"
+llama-cpp-python @ https://github.com/JamePeng/llama-cpp-python/releases/download/v0.3.38-cu130-Basic-linux-20260504/llama_cpp_python-0.3.38+cu130.basic-cp313-cp313-linux_x86_64.whl; python_version == "3.13" and platform_system == "Linux"
+llama-cpp-python @ https://github.com/JamePeng/llama-cpp-python/releases/download/v0.3.38-cu130-Basic-linux-20260504/llama_cpp_python-0.3.38+cu130.basic-cp314-cp314-linux_x86_64.whl; python_version == "3.14" and platform_system == "Linux"
+
+# for macOS
+llama-cpp-python @ https://github.com/JamePeng/llama-cpp-python/releases/download/v0.3.38-Metal-macos-20260504/llama_cpp_python-0.3.38-cp310-cp310-macosx_11_0_arm64.whl; python_version == "3.10" and platform_system == "Darwin"
+llama-cpp-python @ https://github.com/JamePeng/llama-cpp-python/releases/download/v0.3.38-Metal-macos-20260504/llama_cpp_python-0.3.38-cp311-cp311-macosx_11_0_arm64.whl; python_version == "3.11" and platform_system == "Darwin"
+llama-cpp-python @ https://github.com/JamePeng/llama-cpp-python/releases/download/v0.3.38-Metal-macos-20260504/llama_cpp_python-0.3.38-cp312-cp312-macosx_11_0_arm64.whl; python_version == "3.12" and platform_system == "Darwin"
+llama-cpp-python @ https://github.com/JamePeng/llama-cpp-python/releases/download/v0.3.38-Metal-macos-20260504/llama_cpp_python-0.3.38-cp313-cp313-macosx_11_0_arm64.whl; python_version == "3.13" and platform_system == "Darwin"
+llama-cpp-python @ https://github.com/JamePeng/llama-cpp-python/releases/download/v0.3.38-Metal-macos-20260504/llama_cpp_python-0.3.38-cp314-cp314-macosx_11_0_arm64.whl; python_version == "3.14" and platform_system == "Darwin"
